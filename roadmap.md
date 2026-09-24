@@ -5,3 +5,4 @@
 - [x] Implementar e validar formulário Web3Forms
 - [x] Adicionar metadados, favicon e acessibilidade
 - [x] Verificar em computador e telemóvel
+- [x] Substituir retrato placeholder pela fotografia real da Ana
