@@ -28,7 +28,7 @@ import womenImage from "@/assets/viagem-mulheres.jpg";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { CONTACT_EMAIL, WHATSAPP_URL } from "@/config";
+import { CONTACT_EMAIL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/config";
 
 const WEB3FORMS_ACCESS_KEY = "COLOCAR_CHAVE_AQUI";
 
@@ -173,6 +173,7 @@ function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [formMessage, setFormMessage] = useState("");
+  const formattedWhatsapp = `+${WHATSAPP_NUMBER.slice(0, 3)} ${WHATSAPP_NUMBER.slice(3, 6)} ${WHATSAPP_NUMBER.slice(6, 9)} ${WHATSAPP_NUMBER.slice(9)}`;
 
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>("[data-reveal]");
@@ -484,7 +485,7 @@ function Index() {
               <aside className="contact-aside" data-reveal aria-label="Contactos diretos">
                 <p className="font-display text-3xl">Preferes falar diretamente?</p>
                 <div className="mt-8 space-y-6">
-                  <a className="contact-link" href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle /><span><small>WhatsApp</small>+351 900 000 000</span></a>
+                  <a className="contact-link" href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle /><span><small>WhatsApp</small>{formattedWhatsapp}</span></a>
                   <a className="contact-link" href={`mailto:${CONTACT_EMAIL}`}><Mail /><span><small>Email</small>{CONTACT_EMAIL}</span></a>
                   <a className="contact-link" href="https://www.instagram.com/anajustino0/" target="_blank" rel="noreferrer"><Instagram /><span><small>Instagram</small>@anajustino0</span></a>
                   <div className="contact-link"><MapPin /><span><small>Onde estou</small>Lousã, Coimbra<br />Atendimento online para todo o país</span></div>
