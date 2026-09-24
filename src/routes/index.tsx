@@ -17,7 +17,7 @@ import {
 import { type FormEvent, useEffect, useState } from "react";
 import { z } from "zod";
 
-import anaPortraitAsset from "@/assets/ana-justino.jpg.asset.json";
+import anaPortrait from "@/assets/ana-justino.jpg";
 import heroImage from "@/assets/hero-mediterraneo.jpg";
 import coupleImage from "@/assets/viagem-a-dois.jpg";
 import friendsImage from "@/assets/viagem-amigos.jpg";
@@ -330,7 +330,7 @@ function Index() {
           <div className="site-container grid items-center gap-12 md:grid-cols-[0.88fr_1.12fr] lg:gap-24">
             <div className="portrait-wrap" data-reveal>
               <img
-                src={anaPortraitAsset.url}
+                src={anaPortrait}
                 alt="Ana Justino, consultora de viagens, na sua secretária na Lousã"
                 className="h-full w-full object-cover"
                 loading="lazy"
@@ -396,7 +396,7 @@ function Index() {
         <section className="section-pad border-y border-border bg-surface" aria-labelledby="porque-title">
           <div className="site-container">
             <div className="mb-12 text-center" data-reveal>
-              <p className="eyebrow">Viaja descansado</p>
+              <p className="eyebrow">Viaja sem preocupações</p>
               <h2 id="porque-title" className="section-title">Porquê reservar comigo</h2>
             </div>
             <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
