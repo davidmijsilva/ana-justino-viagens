@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { CONTACT_EMAIL, WHATSAPP_URL } from "@/config";
+import { CONTACT_EMAIL, SITE_URL, WHATSAPP_URL } from "@/config";
 import { Wordmark } from "./index";
 
 const TITLE = "Política de Privacidade | Ana Justino Viagens";
@@ -18,9 +18,11 @@ export const Route = createFileRoute("/privacidade")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/privacidade" },
+      { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
+      { property: "og:url", content: `${SITE_URL}/privacidade` },
     ],
-    links: [{ rel: "canonical", href: "/privacidade" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/privacidade` }],
   }),
 });
 

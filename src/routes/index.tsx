@@ -28,9 +28,9 @@ import womenImage from "@/assets/viagem-mulheres.jpg";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { CONTACT_EMAIL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/config";
+import { CONTACT_EMAIL, SITE_URL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/config";
 
-const WEB3FORMS_ACCESS_KEY = "COLOCAR_CHAVE_AQUI";
+const WEB3FORMS_ACCESS_KEY = "a647ea37-bdf7-419f-856b-28aa92764002";
 
 const formSchema = z.object({
   name: z.string().trim().min(2).max(100),
@@ -145,8 +145,8 @@ export const Route = createFileRoute("/")({
           "Viagens à medida, planeadas ao pormenor. Consultora de viagens iCliGo (RNAVT 3301) na Lousã, Coimbra. Pede o teu orçamento grátis.",
       },
       { property: "og:title", content: "Ana Justino Viagens | Consultora de viagens" },
-      { property: "og:image", content: "/og-image.jpg" },
-      { name: "twitter:image", content: "/og-image.jpg" },
+      { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
       { name: "twitter:title", content: "Ana Justino Viagens | Consultora de viagens" },
       {
         property: "og:description",
@@ -154,10 +154,10 @@ export const Route = createFileRoute("/")({
           "Viagens à medida, planeadas ao pormenor. Consultora de viagens iCliGo (RNAVT 3301) na Lousã, Coimbra. Pede o teu orçamento grátis.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: `${SITE_URL}/` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
   }),
 });
 
@@ -225,15 +225,10 @@ function Index() {
       return;
     }
 
-    if (WEB3FORMS_ACCESS_KEY === "COLOCAR_CHAVE_AQUI") {
-      setSubmitState("error");
-      setFormMessage("O formulário ainda está a ser preparado. Fala comigo por WhatsApp ou email.");
-      return;
-    }
-
     formData.set("access_key", WEB3FORMS_ACCESS_KEY);
     formData.set("subject", "Novo pedido de orçamento — site Ana Justino Viagens");
     formData.set("from_name", "Site Ana Justino Viagens");
+    formData.set("replyto", parsed.data.email);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
