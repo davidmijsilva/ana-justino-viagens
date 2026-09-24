@@ -61,8 +61,9 @@ function PrivacyPage() {
           <section>
             <h2 className="mb-2 font-display text-2xl text-foreground">Quem sou</h2>
             <p>
-              Ana Justino Viagens é uma consultora de viagens independente da rede iCliGo (RNAVT 3301),
-              a trabalhar a partir da Lousã, Coimbra. Sou a responsável pelo tratamento dos dados que me envias.
+              Chamo-me Ana Justino e sou consultora de viagens independente da rede iCliGo (RNAVT 3301), a
+              trabalhar a partir da Lousã, Coimbra, com a marca Ana Justino Viagens. Sou a responsável pelo
+              tratamento dos dados que me envias.
             </p>
           </section>
           <section>
@@ -90,6 +91,15 @@ function PrivacyPage() {
           <section>
             <h2 className="mb-2 font-display text-2xl text-foreground">Durante quanto tempo</h2>
             <p>Guardo os teus dados apenas o tempo necessário para responder ao teu pedido.</p>
+          </section>
+          <section>
+            <h2 className="mb-2 font-display text-2xl text-foreground">Cookies</h2>
+            <p>
+              Este site não utiliza cookies de rastreio, de análise ou de publicidade. Apenas é guardada
+              temporariamente no teu navegador informação técnica necessária ao funcionamento da página (como a
+              posição de scroll), que é apagada quando fechas o separador. As fontes tipográficas são alojadas no
+              próprio site, sem ligações a serviços externos.
+            </p>
           </section>
           <section>
             <h2 className="mb-2 font-display text-2xl text-foreground">Os teus direitos</h2>
