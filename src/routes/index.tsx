@@ -17,7 +17,7 @@ import {
 import { type FormEvent, useEffect, useState } from "react";
 import { z } from "zod";
 
-import anaPortrait from "@/assets/ana-justino.jpg";
+import anaPortraitAsset from "@/assets/ana-justino.jpg.asset.json";
 import heroImage from "@/assets/hero-mediterraneo.jpg";
 import coupleImage from "@/assets/viagem-a-dois.jpg";
 import friendsImage from "@/assets/viagem-amigos.jpg";
@@ -330,12 +330,13 @@ function Index() {
           <div className="site-container grid items-center gap-12 md:grid-cols-[0.88fr_1.12fr] lg:gap-24">
             <div className="portrait-wrap" data-reveal>
               <img
-                src={anaPortrait}
-                alt="Retrato temporário de Ana Justino, consultora de viagens"
+                src={anaPortraitAsset.url}
+                alt="Ana Justino, consultora de viagens, na sua secretária na Lousã"
                 className="h-full w-full object-cover"
                 loading="lazy"
-                width={912}
-                height={912}
+                decoding="async"
+                width={1254}
+                height={1254}
               />
               <span className="portrait-caption">A tua viagem começa numa conversa.</span>
             </div>
