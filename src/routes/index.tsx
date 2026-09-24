@@ -139,16 +139,18 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Ana Justino Viagens | Consultora de viagens na Lousã" },
+      { title: "Ana Justino | Consultora de viagens na Lousã" },
       {
         name: "description",
         content:
           "Viagens à medida, planeadas ao pormenor. Consultora de viagens iCliGo (RNAVT 3301) na Lousã, Coimbra. Pede o teu orçamento grátis.",
       },
-      { property: "og:title", content: "Ana Justino Viagens | Consultora de viagens" },
+      { property: "og:title", content: "Ana Justino | Consultora de viagens" },
       { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
       { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
-      { name: "twitter:title", content: "Ana Justino Viagens | Consultora de viagens" },
+      { name: "twitter:title", content: "Ana Justino | Consultora de viagens" },
+      { property: "og:site_name", content: "Ana Justino Viagens" },
+      { property: "og:locale", content: "pt_PT" },
       {
         property: "og:description",
         content:

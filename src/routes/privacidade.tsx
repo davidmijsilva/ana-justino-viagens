@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { CONTACT_EMAIL, SITE_URL, WHATSAPP_URL } from "@/config";
 import { Wordmark } from "./index";
 
-const TITLE = "Política de Privacidade | Ana Justino Viagens";
+const TITLE = "Política de Privacidade | Ana Justino";
 const DESC =
   "Como a Ana Justino Viagens recolhe, usa e protege os teus dados pessoais, de acordo com o RGPD.";
 
