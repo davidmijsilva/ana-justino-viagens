@@ -18,6 +18,8 @@ const btnOutline = "inline-flex items-center justify-center rounded-md border bo
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
+      <title>Página não encontrada | Ana Justino Viagens</title>
+      <meta name="robots" content="noindex" />
       <div className="max-w-md text-center">
         <h1 className="font-display text-8xl font-medium text-primary">404</h1>
         <h2 className="mt-4 font-display text-4xl font-medium text-foreground">Página não encontrada</h2>

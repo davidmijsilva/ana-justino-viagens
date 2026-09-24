@@ -225,15 +225,30 @@ function Index() {
       return;
     }
 
-    formData.set("access_key", WEB3FORMS_ACCESS_KEY);
-    formData.set("subject", "Novo pedido de orçamento — site Ana Justino Viagens");
-    formData.set("from_name", "Site Ana Justino Viagens");
-    formData.set("replyto", parsed.data.email);
+    const d = parsed.data;
+    const orDash = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : "—");
+    const payload = new FormData();
+    payload.append("access_key", WEB3FORMS_ACCESS_KEY);
+    payload.append("subject", "Novo pedido de orçamento — site Ana Justino Viagens");
+    payload.append("from_name", "Site Ana Justino Viagens");
+    payload.append("name", String(d.name));
+    payload.append("email", String(d.email));
+    payload.append("replyto", String(d.email));
+    payload.append("Telemóvel", orDash(d.phone));
+    payload.append("Tipo de viagem", String(d.tripType));
+    payload.append("Destino", orDash(d.destination));
+    payload.append("Datas", orDash(d.dates));
+    payload.append("Número de pessoas", String(d.people));
+    payload.append("Orçamento por pessoa", String(d.budget));
+    payload.append("Mensagem", orDash(d.message));
+    payload.append("Aceitou a Política de Privacidade", "Sim");
+    const botcheck = formData.get("botcheck");
+    payload.append("botcheck", typeof botcheck === "string" ? botcheck : "");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData,
+        body: payload,
       });
       const result = (await response.json()) as { success?: boolean; message?: string };
       if (!response.ok || !result.success) throw new Error(result.message || "Falha no envio");
