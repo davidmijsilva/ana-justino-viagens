@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { MessageCircle } from "lucide-react";
+import { WhatsappIcon } from "@/components/WhatsappIcon";
 
 import { Button } from "@/components/ui/button";
 import { CONTACT_EMAIL, SITE_URL, WHATSAPP_URL } from "@/config";
@@ -38,7 +38,7 @@ function PrivacyPage() {
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <header className="site-header">
         <div className="site-container flex h-[76px] items-center justify-between">
-          <Link to="/" className="shrink-0" aria-label="Ana Justino Viagens — início">
+          <Link to="/" className="shrink-0" aria-label="Ana Justino Viagens, voltar ao início">
             <Wordmark compact />
           </Link>
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Navegação principal">
@@ -115,7 +115,7 @@ function PrivacyPage() {
       <footer className="bg-background py-10">
         <div className="site-container flex flex-col items-center gap-7 text-center md:flex-row md:justify-between md:text-left">
           <Wordmark compact />
-          <p className="max-w-sm text-sm leading-6 text-muted-foreground">Ana Justino Viagens — Consultora de viagens iCliGo · RNAVT 3301<br />© 2026</p>
+          <p className="max-w-sm text-sm leading-6 text-muted-foreground">Ana Justino Viagens · Consultora de viagens iCliGo · RNAVT 3301<br />© 2026</p>
           <div className="flex flex-col gap-2 text-sm text-muted-foreground md:items-end">
             <Link className="footer-link" to="/privacidade">Política de Privacidade</Link>
             <a className="footer-link" href="https://www.livroreclamacoes.pt" target="_blank" rel="noreferrer">Livro de Reclamações</a>
@@ -124,8 +124,8 @@ function PrivacyPage() {
         </div>
       </footer>
 
-      <a className="whatsapp-float" href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="Falar com a Ana no WhatsApp" title="Falar no WhatsApp">
-        <MessageCircle />
+      <a className="whatsapp-float" href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="Fala comigo no WhatsApp" title="Fala comigo no WhatsApp">
+        <WhatsappIcon />
       </a>
     </div>
   );
