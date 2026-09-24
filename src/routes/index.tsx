@@ -6,6 +6,7 @@ import {
   Instagram,
   Mail,
   MapPin,
+  MessageCircle,
   Menu,
   Plane,
   ShieldCheck,
@@ -501,7 +502,7 @@ function Index() {
               <aside className="contact-aside" data-reveal aria-label="Contactos diretos">
                 <p className="font-display text-3xl">Preferes falar diretamente?</p>
                 <div className="mt-8 space-y-6">
-                  <a className="contact-link" href={WHATSAPP_URL} target="_blank" rel="noreferrer"><WhatsappIcon className="whatsapp-brand" /><span><small>WhatsApp</small>{formattedWhatsapp}</span></a>
+                  <a className="contact-link" href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle /><span><small>WhatsApp</small>{formattedWhatsapp}</span></a>
                   <a className="contact-link" href={`mailto:${CONTACT_EMAIL}`}><Mail /><span><small>Email</small>{CONTACT_EMAIL}</span></a>
                   <a className="contact-link" href="https://www.instagram.com/anajustino0/" target="_blank" rel="noreferrer"><Instagram /><span><small>Instagram</small>@anajustino0</span></a>
                   <div className="contact-link"><MapPin /><span><small>Onde estou</small>Lousã, Coimbra<br />Atendimento online para todo o país</span></div>
