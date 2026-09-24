@@ -303,7 +303,7 @@ function Index() {
             fetchPriority="high"
           />
           <div className="hero-overlay" />
-          <div className="site-container relative z-10 flex min-h-[calc(100svh-76px)] items-end pb-16 pt-32 md:items-center md:pb-24 md:pt-28">
+          <div className="hero-inner site-container relative z-10 flex items-end pb-16 pt-32 md:items-center md:pb-24 md:pt-28">
             <div className="hero-content">
               <p className="eyebrow text-hero-foreground">Viagens desenhadas contigo</p>
               <h1 id="hero-title" className="hero-title">
