@@ -161,9 +161,6 @@ a.contact-link:hover { color: var(--primary); }
 .contact-link small { display: block; margin-bottom: 0.2rem; font-size: 0.67rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in oklab, var(--background) 48%, transparent); }
 .footer-link { text-decoration: underline; text-decoration-color: color-mix(in oklab, var(--primary) 55%, transparent); text-underline-offset: 4px; transition: color 180ms ease; }
 .footer-link:hover { color: var(--foreground); }
-.whatsapp-float { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 40; display: grid; width: 3.5rem; height: 3.5rem; place-items: center; border-radius: 50%; background: var(--sage); color: var(--hero-foreground); box-shadow: 0 12px 32px color-mix(in oklab, var(--foreground) 24%, transparent); transition: transform 180ms ease, background 180ms ease; }
-.whatsapp-float:hover { transform: translateY(-3px); background: var(--accent); }
-.whatsapp-float svg { width: 1.6rem; height: 1.6rem; }
 [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity 700ms ease, transform 700ms ease; }
 [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
 
@@ -195,3 +192,10 @@ a.contact-link:hover { color: var(--primary); }
   [data-reveal] { opacity: 1; transform: none; }
 }
 .eyebrow.eyebrow-hero { color: var(--background); text-shadow: 0 1px 12px color-mix(in oklab, var(--foreground) 55%, transparent); }
+.whatsapp-float { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 40; display: grid; width: 60px; height: 60px; place-items: center; border-radius: 50%; background: #25D366; color: #fff; box-shadow: 0 10px 28px rgb(0 0 0 / 0.22); transition: transform 180ms ease, background 180ms ease; animation: wa-pulse 2s ease-out 1s 3; }
+.whatsapp-float:hover { transform: translateY(-3px); background: #1EBE5B; }
+.whatsapp-float svg { width: 30px; height: 30px; }
+.whatsapp-brand { width: 1.15rem; height: 1.15rem; color: #25D366; }
+@keyframes wa-pulse { 0% { box-shadow: 0 10px 28px rgb(0 0 0 / 0.22), 0 0 0 0 rgb(37 211 102 / 0.55); } 70% { box-shadow: 0 10px 28px rgb(0 0 0 / 0.22), 0 0 0 16px rgb(37 211 102 / 0); } 100% { box-shadow: 0 10px 28px rgb(0 0 0 / 0.22), 0 0 0 0 rgb(37 211 102 / 0); } }
+@media (prefers-reduced-motion: reduce) { .whatsapp-float { animation: none; } }
+.contact-link > svg.whatsapp-brand { color: #25D366; }

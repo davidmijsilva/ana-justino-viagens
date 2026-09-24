@@ -7,7 +7,6 @@ import {
   Mail,
   MapPin,
   Menu,
-  MessageCircle,
   Plane,
   ShieldCheck,
   Sparkles,
@@ -25,6 +24,7 @@ import getawayImage from "@/assets/viagem-escapadinha.jpg";
 import familyImage from "@/assets/viagem-familia.jpg";
 import honeymoonImage from "@/assets/viagem-lua-de-mel.jpg";
 import womenImage from "@/assets/viagem-mulheres.jpg";
+import { WhatsappIcon } from "@/components/WhatsappIcon";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -67,7 +67,7 @@ const trips = [
     alt: "Grupo de amigos num miradouro com vista para o mar",
   },
   {
-    title: "Viagens só para mulheres",
+    title: "Viagens de mulheres",
     description: "Descobrir o mundo com confiança e boa companhia.",
     image: womenImage,
     alt: "Grupo de mulheres a explorar uma rua colorida junto a um lago",
@@ -226,10 +226,10 @@ function Index() {
     }
 
     const d = parsed.data;
-    const orDash = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : "—");
+    const orDash = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : "Não indicado");
     const payload = new FormData();
     payload.append("access_key", WEB3FORMS_ACCESS_KEY);
-    payload.append("subject", "Novo pedido de orçamento — site Ana Justino Viagens");
+    payload.append("subject", "Novo pedido de orçamento | site Ana Justino Viagens");
     payload.append("from_name", "Site Ana Justino Viagens");
     payload.append("name", String(d.name));
     payload.append("email", String(d.email));
@@ -265,7 +265,7 @@ function Index() {
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <header className="site-header">
         <div className="site-container flex h-[76px] items-center justify-between">
-          <a href="#inicio" onClick={closeMenu} className="shrink-0" aria-label="Ana Justino Viagens — início">
+          <a href="#inicio" onClick={closeMenu} className="shrink-0" aria-label="Ana Justino Viagens, voltar ao início">
             <Wordmark compact />
           </a>
 
@@ -325,7 +325,7 @@ function Index() {
                 A tua viagem, planeada ao pormenor, pensada para ti.
               </h1>
               <p className="hero-copy">
-                Sou a Ana, consultora de viagens. Trato de tudo — do voo ao último detalhe — para que só te preocupes em aproveitar.
+                Sou a Ana, consultora de viagens. Trato de tudo, do voo ao último detalhe, para que só te preocupes em aproveitar.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg" className="h-12 px-6 text-base">
@@ -333,7 +333,7 @@ function Index() {
                 </Button>
                 <Button asChild variant="heroOutline" size="lg" className="h-12 px-6 text-base">
                   <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-                    <MessageCircle /> Falar comigo no WhatsApp
+                    <WhatsappIcon className="whatsapp-brand" /> Falar comigo no WhatsApp
                   </a>
                 </Button>
               </div>
@@ -360,7 +360,7 @@ function Index() {
               <h2 className="section-title">Olá, sou a Ana</h2>
               <div className="mt-6 space-y-5 text-base leading-8 text-muted-foreground md:text-lg">
                 <p>Sempre acreditei que viajar é colecionar memórias. Por isso decidi fazer daquilo que mais gosto a minha profissão: ajudar-te a planear viagens à tua medida, com a atenção que só um atendimento pessoal consegue dar.</p>
-                <p>Trabalho a partir da Lousã, mas organizo viagens para qualquer lado do mundo. Falas sempre comigo — do primeiro contacto até ao regresso a casa.</p>
+                <p>Trabalho a partir da Lousã, mas organizo viagens para qualquer lado do mundo. Falas sempre comigo, do primeiro contacto até ao regresso a casa.</p>
               </div>
               <div className="trust-seal"><Check /> Consultora de viagens iCliGo · RNAVT 3301</div>
             </div>
@@ -386,7 +386,7 @@ function Index() {
                 </article>
               ))}
             </div>
-            <p className="mt-10 text-center text-sm text-muted-foreground">E muito mais — conta-me a tua ideia.</p>
+            <p className="mt-10 text-center text-sm text-muted-foreground">E muito mais. Conta-me a tua ideia.</p>
           </div>
         </section>
 
@@ -437,7 +437,7 @@ function Index() {
               <p className="eyebrow text-primary">Vamos conversar</p>
               <h2 className="section-title text-background">Para onde vamos a seguir?</h2>
               <p className="mt-5 text-lg leading-8 text-background/70">
-                Conta-me a tua ideia de viagem. O orçamento é gratuito e sem compromisso — respondo-te o mais depressa possível.
+                Conta-me a tua ideia de viagem. O orçamento é gratuito e sem compromisso, e respondo-te o mais depressa possível.
               </p>
             </div>
 
@@ -457,7 +457,7 @@ function Index() {
                   <FormField label="Tipo de viagem" htmlFor="tripType" required>
                     <select id="tripType" name="tripType" className="form-control" required defaultValue="">
                       <option value="" disabled>Seleciona uma opção</option>
-                      <option>Lua de mel</option><option>Viagem a dois</option><option>Viagem com amigos</option><option>Viagem só para mulheres</option><option>Férias em família</option><option>Escapadinha</option><option>Outra</option>
+                      <option>Lua de mel</option><option>Viagem a dois</option><option>Viagem com amigos</option><option>Viagem de mulheres</option><option>Férias em família</option><option>Escapadinha</option><option>Outra</option>
                     </select>
                   </FormField>
                   <FormField label="Destino que imaginas" htmlFor="destination">
@@ -472,7 +472,7 @@ function Index() {
                   <FormField label="Orçamento aproximado por pessoa" htmlFor="budget" required>
                     <select id="budget" name="budget" className="form-control" required defaultValue="">
                       <option value="" disabled>Seleciona uma opção</option>
-                      <option>Até 500€</option><option>500€–1.000€</option><option>1.000€–2.000€</option><option>Mais de 2.000€</option><option>Ainda não sei</option>
+                      <option>Até 500€</option><option>500€ a 1.000€</option><option>1.000€ a 2.000€</option><option>Mais de 2.000€</option><option>Ainda não sei</option>
                     </select>
                   </FormField>
                   <div className="sm:col-span-2">
@@ -501,7 +501,7 @@ function Index() {
               <aside className="contact-aside" data-reveal aria-label="Contactos diretos">
                 <p className="font-display text-3xl">Preferes falar diretamente?</p>
                 <div className="mt-8 space-y-6">
-                  <a className="contact-link" href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle /><span><small>WhatsApp</small>{formattedWhatsapp}</span></a>
+                  <a className="contact-link" href={WHATSAPP_URL} target="_blank" rel="noreferrer"><WhatsappIcon className="whatsapp-brand" /><span><small>WhatsApp</small>{formattedWhatsapp}</span></a>
                   <a className="contact-link" href={`mailto:${CONTACT_EMAIL}`}><Mail /><span><small>Email</small>{CONTACT_EMAIL}</span></a>
                   <a className="contact-link" href="https://www.instagram.com/anajustino0/" target="_blank" rel="noreferrer"><Instagram /><span><small>Instagram</small>@anajustino0</span></a>
                   <div className="contact-link"><MapPin /><span><small>Onde estou</small>Lousã, Coimbra<br />Atendimento online para todo o país</span></div>
@@ -515,7 +515,7 @@ function Index() {
       <footer className="bg-background py-10">
         <div className="site-container flex flex-col items-center gap-7 text-center md:flex-row md:justify-between md:text-left">
           <Wordmark compact />
-          <p className="max-w-sm text-sm leading-6 text-muted-foreground">Ana Justino Viagens — Consultora de viagens iCliGo · RNAVT 3301<br />© 2026</p>
+          <p className="max-w-sm text-sm leading-6 text-muted-foreground">Ana Justino Viagens · Consultora de viagens iCliGo · RNAVT 3301<br />© 2026</p>
           <div className="flex flex-col gap-2 text-sm text-muted-foreground md:items-end">
             <Link className="footer-link" to="/privacidade">Política de Privacidade</Link>
             <a className="footer-link" href="https://www.livroreclamacoes.pt" target="_blank" rel="noreferrer">Livro de Reclamações</a>
@@ -524,8 +524,8 @@ function Index() {
         </div>
       </footer>
 
-      <a className="whatsapp-float" href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="Falar com a Ana no WhatsApp" title="Falar no WhatsApp">
-        <MessageCircle />
+      <a className="whatsapp-float" href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="Fala comigo no WhatsApp" title="Fala comigo no WhatsApp">
+        <WhatsappIcon />
       </a>
     </div>
   );
