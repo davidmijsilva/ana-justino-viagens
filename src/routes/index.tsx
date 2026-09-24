@@ -234,14 +234,14 @@ function Index() {
     payload.append("name", String(d.name));
     payload.append("email", String(d.email));
     payload.append("replyto", String(d.email));
-    payload.append("Telemóvel", orDash(d.phone));
+    payload.append("Telefone", orDash(d.phone));
     payload.append("Tipo de viagem", String(d.tripType));
     payload.append("Destino", orDash(d.destination));
     payload.append("Datas", orDash(d.dates));
-    payload.append("Número de pessoas", String(d.people));
-    payload.append("Orçamento por pessoa", String(d.budget));
+    payload.append("Pessoas", String(d.people));
+    payload.append("Valor por pessoa", String(d.budget));
     payload.append("Mensagem", orDash(d.message));
-    payload.append("Aceitou a Política de Privacidade", "Sim");
+    payload.append("Privacidade aceite", "Sim");
     const botcheck = formData.get("botcheck");
     payload.append("botcheck", typeof botcheck === "string" ? botcheck : "");
 
