@@ -6,10 +6,19 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Netlify builds (NITRO_PRESET=netlify) also prerender the public pages to static HTML.
+const isNetlify = process.env.NITRO_PRESET === "netlify";
+
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    ...(isNetlify
+      ? {
+          prerender: { enabled: true, crawlLinks: false },
+          pages: [{ path: "/" }, { path: "/privacidade" }],
+        }
+      : {}),
   },
 });
