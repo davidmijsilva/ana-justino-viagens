@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Check,
@@ -132,6 +132,8 @@ const reasons = [
   },
 ];
 
+export { Wordmark };
+
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
@@ -142,7 +144,10 @@ export const Route = createFileRoute("/")({
         content:
           "Viagens à medida, planeadas ao pormenor. Consultora de viagens iCliGo (RNAVT 3301) na Lousã, Coimbra. Pede o teu orçamento grátis.",
       },
-      { property: "og:title", content: "Ana Justino Viagens | Consultora de viagens na Lousã" },
+      { property: "og:title", content: "Ana Justino Viagens | Consultora de viagens" },
+      { property: "og:image", content: "/og-image.jpg" },
+      { name: "twitter:image", content: "/og-image.jpg" },
+      { name: "twitter:title", content: "Ana Justino Viagens | Consultora de viagens" },
       {
         property: "og:description",
         content:
@@ -305,7 +310,7 @@ function Index() {
           <div className="hero-overlay" />
           <div className="hero-inner site-container relative z-10 flex items-end pb-16 pt-32 md:items-center md:pb-24 md:pt-28">
             <div className="hero-content">
-              <p className="eyebrow text-hero-foreground">Viagens desenhadas contigo</p>
+              <p className="eyebrow eyebrow-hero">Viagens desenhadas contigo</p>
               <h1 id="hero-title" className="hero-title">
                 A tua viagem, planeada ao pormenor, pensada para ti.
               </h1>
@@ -468,7 +473,7 @@ function Index() {
                 </div>
                 <label className="mt-6 flex cursor-pointer items-start gap-3 text-sm leading-6 text-background/75">
                   <input name="consent" type="checkbox" required className="mt-1 size-4 shrink-0 accent-primary" />
-                  <span>Aceito que os meus dados sejam usados para responder a este pedido.</span>
+                  <span>Li e aceito a <Link to="/privacidade" className="underline underline-offset-4 hover:text-primary">Política de Privacidade</Link></span>
                 </label>
                 <div className="mt-7 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                   <Button type="submit" size="lg" className="h-12 px-7 text-base" disabled={submitState === "sending"}>
@@ -502,6 +507,7 @@ function Index() {
           <Wordmark compact />
           <p className="max-w-sm text-sm leading-6 text-muted-foreground">Ana Justino Viagens — Consultora de viagens iCliGo · RNAVT 3301<br />© 2026</p>
           <div className="flex flex-col gap-2 text-sm text-muted-foreground md:items-end">
+            <Link className="footer-link" to="/privacidade">Política de Privacidade</Link>
             <a className="footer-link" href="https://www.livroreclamacoes.pt" target="_blank" rel="noreferrer">Livro de Reclamações</a>
             <a className="footer-link" href="https://oteunegociodigital.pt" target="_blank" rel="noreferrer">Site criado por O teu negócio digital</a>
           </div>
