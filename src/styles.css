@@ -198,3 +198,4 @@ a.contact-link:hover { color: var(--primary); }
 .whatsapp-brand { width: 1.15rem; height: 1.15rem; color: #25D366; }
 @keyframes wa-pulse { 0% { box-shadow: 0 10px 28px rgb(0 0 0 / 0.22), 0 0 0 0 rgb(37 211 102 / 0.55); } 70% { box-shadow: 0 10px 28px rgb(0 0 0 / 0.22), 0 0 0 16px rgb(37 211 102 / 0); } 100% { box-shadow: 0 10px 28px rgb(0 0 0 / 0.22), 0 0 0 0 rgb(37 211 102 / 0); } }
 @media (prefers-reduced-motion: reduce) { .whatsapp-float { animation: none; } }
+.contact-link > svg.whatsapp-brand { color: #25D366; }
