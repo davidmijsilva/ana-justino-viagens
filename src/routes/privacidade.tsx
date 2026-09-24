@@ -107,6 +107,8 @@ function PrivacyPage() {
               Podes pedir a qualquer momento acesso, correção ou eliminação dos teus dados. Basta escreveres para{" "}
               <a className="footer-link text-foreground" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
               Tens também o direito de apresentar reclamação à Comissão Nacional de Proteção de Dados (CNPD).
+              {" "}Em caso de litígio, o consumidor pode recorrer a uma Entidade de Resolução Alternativa de Litígios de consumo. Mais informações no Portal do Consumidor:{" "}
+              <a className="footer-link text-foreground" href="https://www.consumidor.gov.pt" target="_blank" rel="noreferrer">www.consumidor.gov.pt</a>
             </p>
           </section>
         </div>
@@ -122,6 +124,10 @@ function PrivacyPage() {
             <a className="footer-link" href="https://oteunegociodigital.pt" target="_blank" rel="noreferrer">Site criado por O teu negócio digital</a>
           </div>
         </div>
+        <p className="site-container mt-8 border-t pt-6 text-center text-xs leading-5 text-muted-foreground">
+          Em caso de litígio, o consumidor pode recorrer a uma Entidade de Resolução Alternativa de Litígios de consumo. Mais informações no Portal do Consumidor:{" "}
+          <a className="footer-link" href="https://www.consumidor.gov.pt" target="_blank" rel="noreferrer">www.consumidor.gov.pt</a>
+        </p>
       </footer>
 
       <a className="whatsapp-float" href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="Fala comigo no WhatsApp" title="Fala comigo no WhatsApp">
